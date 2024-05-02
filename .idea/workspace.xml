@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c02c69f-5cf8-45d8-9986-13f8401f25ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/aluraChallenge/conversorDeMonedas/modelos/consultarApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aluraChallenge/conversorDeMonedas/modelos/convertidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluraChallenge/conversorDeMonedas/modelos/convertidor.java" afterDir="false" />
     </list>
@@ -34,6 +35,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Principal.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
