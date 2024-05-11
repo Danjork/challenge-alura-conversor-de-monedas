@@ -1,46 +1,57 @@
+import com.aluraChallenge.conversorDeMonedas.modelos.codigoMonedas;
+import com.aluraChallenge.conversorDeMonedas.modelos.consultarApi;
+
 import java.io.IOException;
 import java.util.Scanner;
 
+
 public class Principal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Scanner scanner = new Scanner(System.in);
-        int opcion = scanner.nextInt();
-        int montoDeseado = scanner.nextInt();
+        consultarApi consultaTasa = new consultarApi();
+
         int opcionIngresado = 0;
         double montoIngresado = 0.00;
 
-        String Menu = """
-                **************************************
-                Bienvenido al conversor de moneda
-                
-                1) Dólar => Peso argentino
-                2) Peso argentino => Dólar
-                3) Dólar => Real brasileño
-                4) Real brasileño => Dólar
-                5) Dólar => Peso colombiano
-                6) Peso colombiano => Dólar
-                7) Salir
-                
-                Elija una opcion valida:
-                ***************************************
-                """;
 
-        //System.out.print(Menu);
-        opcionIngresado = opcion;
 
     do{
-        System.out.print(Menu);
+        System.out.println("**************************************");
+        System.out.println("Bienvenido al conversor de moneda");
+        System.out.println("1) Dólar => Peso argentino");
+        System.out.println("2) Peso argentino => Dólar");
+        System.out.println("3) Dólar => Real brasileño");
+        System.out.println("4) Real brasileño => Dólar");
+        System.out.println("5) Dólar => Peso colombiano");
+        System.out.println("6) Peso colombiano => Dólar");
+        System.out.println("7) Salir");
+        System.out.println("Elija una opcion valida: ");
+        int opcion = scanner.nextInt();
+        System.out.println("***************************************");
+
+        //System.out.print(Menu);
+
+
+
+       opcionIngresado = opcion;
 
         if (opcionIngresado >= 1 && opcionIngresado <= 6){
             System.out.println("Ingresar valor a convertir");
+            int montoDeseado = scanner.nextInt();
             montoIngresado = montoDeseado;
         }
 
             switch (opcion){
                 case 1:
-                    System.out.println("funciona");
+                    consultaTasa.buscadorDeMoneda(codigoMonedas.ARS, codigoMonedas.USD, codigoMonedas.ARS, montoIngresado);
+                break;
+                case 2:
+                    consultaTasa.buscadorDeMoneda(codigoMonedas.USD, codigoMonedas.ARS, codigoMonedas.ARS, montoIngresado);
                     break;
+                case 3:
+                    consultaTasa.buscadorDeMoneda(codigoMonedas.BRL, codigoMonedas.USD, codigoMonedas.BRL , montoIngresado);
+                break;
             }
 
 

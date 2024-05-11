@@ -12,37 +12,30 @@ import java.net.http.HttpResponse;
 public class consultarApi{
 
     public void  buscadorDeMoneda(codigoMonedas monedaOrigen, codigoMonedas monedaFinal, codigoMonedas monedaConversion, double valoringresado) throws IOException, InterruptedException  {
-    double conversion = 0.00;
 
-        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/eba2e5508ca1e164b1298db7/latest/"  );
+        double conversion = 0.00;
+
+        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/eba2e5508ca1e164b1298db7/latest/USD"  );
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(direccion)
                 .build();
 
-        try {
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+    HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+    JsonObject jsonObject = new Gson().fromJson(response.body(), JsonObject.class);
+    JsonObject tasasConversion = jsonObject.getAsJsonObject("conversion_rates");
 
-            JsonObject jsonObject = new Gson().fromJson(response.body(), JsonObject.class);
+    var valorMoneda = tasasConversion.get(String.valueOf(monedaConversion)).getAsDouble();
 
-            JsonObject tasaConversion = jsonObject.getAsJsonObject("conversion_rates");
+    if (monedaOrigen.equals(monedaConversion)) {
+        conversion = valoringresado / valorMoneda;
 
-            var  valorMoneda = tasaConversion.get(String.valueOf(monedaConversion)).getAsDouble();
-
-            if(monedaOrigen.equals(monedaConversion)){
-                conversion = valoringresado / valorMoneda;
-
-            }else{
-                conversion = valoringresado*valorMoneda;
-            }
-            System.out.println();
+    } else {
+        conversion = valoringresado * valorMoneda;
+    }
+    System.out.println("El monto ingresado es:  " + valoringresado + " la moneda es  " + monedaOrigen +" Valor del cambio: "+ conversion + " " + monedaFinal);
 
 
-
-
-
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
