@@ -1,10 +1,14 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
+        int opcion = scanner.nextInt();
+        int montoDeseado = scanner.nextInt();
+        int opcionIngresado = 0;
+        double montoIngresado = 0.00;
 
         String Menu = """
                 **************************************
@@ -22,9 +26,30 @@ public class Principal {
                 ***************************************
                 """;
 
+        //System.out.print(Menu);
+        opcionIngresado = opcion;
+
+    do{
         System.out.print(Menu);
 
-        
+        if (opcionIngresado >= 1 && opcionIngresado <= 6){
+            System.out.println("Ingresar valor a convertir");
+            montoIngresado = montoDeseado;
+        }
 
+            switch (opcion){
+                case 1:
+                    System.out.println("funciona");
+                    break;
+            }
+
+
+
+        }while(opcionIngresado != 0);
     }
+
+
+
+
+
 }
