@@ -34,7 +34,7 @@ public class consultarApi{
     } else {
         conversion = valoringresado * valorMoneda;
     }
-    System.out.println("El monto ingresado es:  " + valoringresado + " la moneda es  " + monedaOrigen +" Valor del cambio: "+ conversion + " " + monedaFinal);
+    System.out.println("El monto es:  " + valoringresado + " " + monedaOrigen +" Valor del cambio: "+ conversion + " " + monedaFinal);
 
 
     }

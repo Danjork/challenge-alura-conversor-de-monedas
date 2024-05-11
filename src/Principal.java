@@ -30,9 +30,6 @@ public class Principal {
         int opcion = scanner.nextInt();
         System.out.println("***************************************");
 
-        //System.out.print(Menu);
-
-
 
        opcionIngresado = opcion;
 
@@ -44,19 +41,35 @@ public class Principal {
 
             switch (opcion){
                 case 1:
-                    consultaTasa.buscadorDeMoneda(codigoMonedas.ARS, codigoMonedas.USD, codigoMonedas.ARS, montoIngresado);
+
+                    consultaTasa.buscadorDeMoneda(codigoMonedas.USD, codigoMonedas.ARS, codigoMonedas.ARS, montoIngresado);
                 break;
                 case 2:
-                    consultaTasa.buscadorDeMoneda(codigoMonedas.USD, codigoMonedas.ARS, codigoMonedas.ARS, montoIngresado);
+                    consultaTasa.buscadorDeMoneda(codigoMonedas.ARS, codigoMonedas.USD, codigoMonedas.ARS, montoIngresado);
+
                     break;
                 case 3:
                     consultaTasa.buscadorDeMoneda(codigoMonedas.BRL, codigoMonedas.USD, codigoMonedas.BRL , montoIngresado);
                 break;
+                case 4:
+                    consultaTasa.buscadorDeMoneda(codigoMonedas.USD, codigoMonedas.BRL, codigoMonedas.BRL , montoIngresado);
+                    break;
+                case 5:
+                    consultaTasa.buscadorDeMoneda(codigoMonedas.COP, codigoMonedas.USD, codigoMonedas.COP , montoIngresado);
+                    break;
+                case 6:
+                    consultaTasa.buscadorDeMoneda(codigoMonedas.USD, codigoMonedas.COP, codigoMonedas.COP , montoIngresado);
+                    break;
+                case 7:
+                    System.out.println("Gracias por usarme");
+                    break;
+                default:
+                    System.out.println("Opción invalida intente de nuevo");
             }
 
 
 
-        }while(opcionIngresado != 0);
+        }while(opcionIngresado != 7);
     }
 
 

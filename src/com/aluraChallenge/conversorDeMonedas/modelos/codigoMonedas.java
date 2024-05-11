@@ -4,5 +4,5 @@ public enum codigoMonedas {
     USD,
     ARS,
     BRL,
-    EUR
+    COP
 }
