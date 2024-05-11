@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c02c69f-5cf8-45d8-9986-13f8401f25ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Conversor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aluraChallenge/conversorDeMonedas/modelos/consultarApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluraChallenge/conversorDeMonedas/modelos/consultarApi.java" afterDir="false" />
     </list>
@@ -17,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>

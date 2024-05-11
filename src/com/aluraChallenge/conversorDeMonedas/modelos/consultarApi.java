@@ -10,23 +10,26 @@ import java.net.http.HttpResponse;
 
 public class consultarApi {
 
-    URI direccion = URI.create("https://v6.exchangerate-api.com/v6/eba2e5508ca1e164b1298db7/latest/USD");
-    HttpClient client = HttpClient.newHttpClient();
-    HttpRequest request = HttpRequest.newBuilder()
-            .uri(direccion)
-            .build();
+    public ConsultaAPI buscardoDeMoneda(String convertirMoneda) {
+        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/eba2e5508ca1e164b1298db7/latest/"+convertirMoneda);
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(direccion)
+                .build();
 
-    HttpResponse<String> response = null;
+        HttpResponse<String> response = null;
 
-    try{
-        response = client.send(request, HttpResponse.BodyHandler.ofString());
+        try {
+            
+        }
+            response = client.send(request, HttpResponse.BodyHandler.ofString());
 
-    }catch (IOException | InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
-    {
-        return new Gson.fromJson(response.body(),Conversor.Class);
+            {
+                return new Gson.fromJson(response.body(), Conversor.Class);
+            }
+
+
+        }
     }
-
-
-
-}
