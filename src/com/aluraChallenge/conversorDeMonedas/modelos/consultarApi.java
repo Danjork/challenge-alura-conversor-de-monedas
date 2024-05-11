@@ -21,6 +21,8 @@ public class consultarApi {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             return new Gson().fromJson(response.body(), Conversion.class);
 
+
+
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
